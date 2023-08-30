@@ -21,7 +21,7 @@ app.use('/api',require('./api/user/Router'))
 // mongoose.connect(process.env.MONGO_URI)
 // .then(()=> console.log("Connected DaTa Base"))
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname,'./client/dist/index.html'))
+  res.sendFile(path.join(__dirname,'./client/dist'))
 })
 
 app.listen(port, () => {
