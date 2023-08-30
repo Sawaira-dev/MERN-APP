@@ -40,10 +40,10 @@ API cyclic live URL => https://careful-rose-centipede.cyclic.cloud/api/getalluse
   To get all categories
 * **Create Category** => `/create-categories`
   To create a Category
-  {
-  "categoryName" :  "",
-  "categoryImage" : ""
-  }
+  { categoryName, categoryImage }
+
+* **Delete Category** => `/delete-category`
+  To gelete a category 
 * **Delete Product** => `/delete-products-by-category`
   To delete product by its category
 * **Update Brand** => `/update-category/:id`
@@ -57,15 +57,8 @@ API cyclic live URL => https://careful-rose-centipede.cyclic.cloud/api/getalluse
 * **Signup** => `/signup`
   To authenticate or register a user.
   
-  {
+  { username, mail, password }
   
-  "username" : "",
-  
-  "email" : "",
-  
-  "password" : ""
-  
-  }
 * **Login** => `/login`
   To create a Category
 * **Get Users** => `/getallusers`
@@ -81,13 +74,8 @@ API cyclic live URL => https://careful-rose-centipede.cyclic.cloud/api/getalluse
 * **Create Brand** => `/create-brands`
   To create a brand.
   
-  {
-
-  "brand" : "",
+  { brand, Image }
   
-  "Image" : ""
-  
-  }
 * **Delete Product** => `/delete-products-by-brand`
   To delete product by its brand
 * **Update Brand** => `/update-brand/:id`
@@ -107,30 +95,11 @@ API cyclic live URL => https://careful-rose-centipede.cyclic.cloud/api/getalluse
 * **Create Product** => `/create-products`
   To create a Product
   
-  {
-  
-  "productName" : "",
-  
-  "price" : ""
-  
-  "brand" : "",
-  
-  "category" : "",
-  
-  "description" : "",
- 
-   "rating" : "",
-  
-   "Images" : "",
-  
-   "thumbnail" : "",
-  
-   "product_colors" : "",
-  
-   "product_type" : ""
-  
-  }
-* **Delete Product** => `/delete-products-by-brand`
+  { productName, price, brand, category, description, rating, Images, thumbnail, product_colors, product_type }
+
+* **Delete Product** => `/delete-product`
+  To gelete a product 
+* **Delete Product by brand** => `/delete-products-by-brand`
   To delete product by its brand
 * **Delete Product by ID** => `/delete-product/:_id`
   To delete product by its ID
