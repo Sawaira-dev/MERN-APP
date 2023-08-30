@@ -26,7 +26,7 @@ Welcome to the README for our E-Commerce Website project built using the MERN (M
 ## Getting Started
 Follow these steps to set up the project locally on your machine:
 
-* Clone the repository: git clone https://github.com/sawaira-dev/project-backend.git
+* Clone the repository: git clone https://github.com/Sawaira-dev/MERN-APP.git 
 * Navigate to the project directory: cd your-project
 * Install dependencies for both frontend and backend: npm install
 * Configure environment variables for database connection, authentication, and payment gateway.
