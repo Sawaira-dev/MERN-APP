@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import { storage } from '../utils/FirebaseConfig'
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import axios from 'axios';
-import { AppRoute } from '../../App'
+// import { AppRoute } from '../../App'
 
 
 function BrandModal({recallData}) {
@@ -26,7 +26,7 @@ function BrandModal({recallData}) {
             getDownloadURL(snapshot.ref)
                 .then((url) => {
                     const payload = { brand, Images: url }
-                    axios.post(`${AppRoute}api/create-brands`, payload)
+                    axios.post('/api/create-brands', payload)
                         .then((json) => {
                             setShow(false);
                             console.log(json.data)

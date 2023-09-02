@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProductModal from '../components/ProductModal'
 import axios from 'axios'
-import { AppRoute } from '../../App'
+// import { AppRoute } from '../../App'
 import { AiFillDelete } from 'react-icons/ai'
 
 export default function Products() {
@@ -9,7 +9,7 @@ export default function Products() {
     const [Product, setProduct] = useState([])
 
     useEffect(() => {
-        axios.get(`${AppRoute}api/get-all-products`)
+        axios.get('/api/get-all-products')
             .then((json) => setProduct(json.data.Product))
             .catch((err) => console.log(err))
 

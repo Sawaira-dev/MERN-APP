@@ -1,37 +1,3 @@
-// import React, { useContext } from 'react'
-// import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
-// import Navbar from 'react-bootstrap/Navbar';
-// import { Link } from 'react-router-dom';
-// import { GlobalContext } from '../../Context/context'
-// import Cookies from 'js-cookie';
-
-// export default function GuestNav() {
-
-//     const { state, dispatch } = useContext(GlobalContext)
-
-
-//     return (
-//         <Navbar expand="lg" className="bg-body-tertiary ">
-//             <Container>
-//                 <Link className='navbar-brand fw-bold' to='/'>MOKINGO</Link>
-//                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-//                 <Navbar.Collapse id="basic-navbar-nav">
-//                     <Nav className="mx-auto">
-//                         <Link to='/brands' className='nav-link'>Brands</Link>
-//                         <Link to='/product' className='nav-link'>Product</Link>
-//                         <Link to='/category' className='nav-link'>Category</Link>
-//                     </Nav>
-
-             
-                    
-//                 </Navbar.Collapse>
-                
-//             </Container>
-//         </Navbar>
-//     )
-// }
-
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';

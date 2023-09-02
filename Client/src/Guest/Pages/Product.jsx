@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import GuestCards from '../../Guest/Component/GuestCards'
+import { AppRoute } from '../../App'
 
 export default function Product() {
     const [Products, setProducts] = useState([])
 
     useEffect(() => {
-        axios.get('/api/get-all-products')
+        axios.get(`${AppRoute}api/get-all-products`)
             .then((json) => setProducts(json.data.Product))
             .catch((err) => console.log(err))
 

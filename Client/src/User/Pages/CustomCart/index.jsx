@@ -23,7 +23,7 @@ export default function CustomCart() {
         }
 
 
-        axios.post(`${AppRoute}api/place-order`, payload)
+        axios.post('http://localhost:1234/api/place-order', payload)
             .then((json) => console.log(json.data))
             .catch(err => console.log(err.message))
     }

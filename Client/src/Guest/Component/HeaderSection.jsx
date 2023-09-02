@@ -36,4 +36,3 @@ export default function HeaderSection() {
         </>
     )
 }
-// https://png.pngtree.com/png-vector/20230408/ourmid/pngtree-delicious-pizza-creative-photography-png-image_6687083.png

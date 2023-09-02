@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import UserCards from '../../User/Components/UserCards'
-import FooterSection from '../Components/FooterSection'
+
 
 export default function Brands() {
     const [brands, setBrands] = useState([])

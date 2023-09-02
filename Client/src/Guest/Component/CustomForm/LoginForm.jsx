@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react'
-import axios from 'axios'
-import Cookies from 'js-cookie'
-import { GlobalContext } from '../../../Context/context'
-// import { AppRoute } from '../../../App'
+import React, { useContext, useState } from 'react';
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { GlobalContext } from '../../../Context/context';;
+import Swal from 'sweetalert2';
 
 export default function LoginForm() {
 
@@ -13,25 +13,51 @@ export default function LoginForm() {
 
     const loginUser = (e) => {
         e.preventDefault();
-
         const payload = { email, password }
-
+        if (  !email || !password ) {
+            Swal.fire({
+                icon: 'warning',
+            title: 'Please fill in all required fields' 
+        });
+            return;
+        }
         axios.post('/api/login', payload)
-            .then((json) => {
-                Cookies.set('token', json.data.token)
+        .then((response) => {
+            const { data } = response;
+            if (data.token) {
+                Cookies.set('token', data.token);
                 dispatch({
-                    type: "USER_LOGIN",
-                    token: json.data.token
-                })
-
-            })
-            .catch(err => console.log(err))
-
-    }
-
+                    type: 'USER_LOGIN',
+                    token: data.token,
+                });
+                Swal.fire({
+                    title: 'LogIn Successful!',
+                    text: 'You have successfully logged in.',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                });
+            } else {
+                Swal.fire({
+                    title: 'Login Error',
+                    text: data.message || 'An error occurred during login.',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                });
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+            Swal.fire({
+                title: 'Login Error',
+                text: 'An error occurred during login.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+            });
+        });
+}
     return (
         <div className="flip-card__front pt-5 bg-danger align-items-center">
-            <div className="title ">Log in</div>
+            <div className="title">Log in</div>
             <form className="flip-card__form" onSubmit={loginUser}>
                 <input
                     className="flip-card__input"
@@ -49,8 +75,8 @@ export default function LoginForm() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className="flip-card__btn">Let`s go!</button>
+                <button className="flip-card__btn">Submit</button>
             </form>
         </div>
-    )
+    );
 }
