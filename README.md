@@ -33,7 +33,6 @@ Follow these steps to set up the project locally on your machine:
 * Run the development server: npm run dev
 * Open your browser and access the application at `http://localhost:1234`
 ## API Routes
-API cyclic live URL => https://careful-rose-centipede.cyclic.cloud/api/getallusers
 
 ### Category API Routes;
 * **Get Categories** => `/get-all-category`
