@@ -6,7 +6,7 @@ const port = process.env.SERVER_PORT
 const cors = require('cors')
 const path = require('path')
 
-const clientpath = path.join(__dirname,'./client/dist')
+const clientpath = path.join(__dirname,'./Client/dist')
 app.use('/', express.static(clientpath))
 
 
@@ -20,7 +20,7 @@ app.use('/api',require('./api/user/Router'))
 
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname,'./client/dist/index.html'))
+  res.sendFile(path.join(__dirname,'./Client/dist/index.html'))
 })
 
 app.listen(port, () => {
